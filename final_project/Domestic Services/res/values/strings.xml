@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Domestic Services</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Rate us</string>
+     <string name="banner_ad_unit_id">ca-app-pub-6422890541629127/5819630492</string>
+     <string name="textWithHtml">The URL link is &lt;a href="http://www.google.com">Google&lt;/a></string>
+ <string name="pb_appid">55b88e7017795983378b4568</string>
+    <!-- GCM Sender ID -->
+    <string name="pb_senderid">792714089188</string>
+    <!-- Pushbots Log Level  log Tag "PB2" -->
+    <string name="pb_logLevel">DEBUG</string>
+    
+</resources>

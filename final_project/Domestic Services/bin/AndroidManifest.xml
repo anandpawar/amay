@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.domestic.services"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<!-- GCM requires a Google account. -->
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<permission android:name="com.domestic.services.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+<uses-permission android:name="com.domestic.services.permission.C2D_MESSAGE" />
+<!-- This app has permission to register and receive dataf message. -->
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+         <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+        <activity
+            android:name="com.domestic.services.Login"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+    <action android:name="com.domestic.services.MESSAGE" />
+    <category android:name="android.intent.category.DEFAULT" />
+</intent-filter>
+        </activity>
+        
+        <activity android:name="com.domestic.services.ContactUs" >
+        </activity>
+        <activity android:name="com.domestic.services.Service" >
+        </activity>
+        <activity android:name="com.domestic.services.Home" >
+        </activity>
+        <activity android:name="com.domestic.services.Register" >
+        </activity>
+        <activity android:name="com.domestic.services.Cooking" >
+        </activity>
+        <activity android:name="com.domestic.services.Electrician" >
+        </activity>
+        <activity android:name="com.domestic.services.Laundry" >
+        </activity>
+        <activity android:name="com.domestic.services.Plumber" >
+        </activity>
+           <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+           
+           
+           <receiver
+	android:name="com.pushbots.google.gcm.GCMBroadcastReceiver"
+android:permission="com.google.android.c2dm.permission.SEND" >
+    <intent-filter>
+        <!-- Receives the actual messages. -->
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <!-- Receives the registration id. -->
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.domestic.services" />
+    </intent-filter>
+</receiver>
+<receiver android:name="com.pushbots.push.DefaultPushHandler" />
+<service android:name="com.pushbots.push.GCMIntentService" />
+    </application>
+
+</manifest>
